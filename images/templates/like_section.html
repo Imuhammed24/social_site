@@ -1,0 +1,36 @@
+{% load static %}
+{% load thumbnail %}
+
+<span class="count ml-2">
+    <span class="total">{{ total_no_likes }}</span>
+    like{{ total_no_likes|pluralize }}
+</span>
+
+<span id="like_unlike_form">
+    <form action="{% url 'like' %}" class="d-inline ml-2">
+
+        {% csrf_token %}
+
+            <button type="submit" id="like" name="post_id" value="{{ post.id }}" {% if is_liked %}class="btn btn-danger"{% else %}class="btn btn-success"{% endif %}>
+                {% if is_liked %}
+                    Unlike
+                {% else %}
+                    Like
+                {% endif %}
+            </button>
+
+    </form>
+</span>
+
+<span class="image-likes">
+            {% for user in users_like %}
+            <div class="d-inline">
+                {% thumbnail user.profile.photo "50" as im %}
+                <img src="{{ im.url }}">
+                {% endthumbnail %}
+                <p class="d-inline">{{ user.first_name }}</p>
+            </div>
+            {% empty %}
+            Nobody likes this image yet.
+            {% endfor %}
+        </span>

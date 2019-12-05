@@ -1,0 +1,29 @@
+{% load static %}
+{% load thumbnail %}
+
+
+<span class="count mr-2">
+    <span class="total">{{ total_no_followers }}</span>
+    follower{{ total_no_followers|pluralize }}
+</span>
+
+<span class="count">
+    <span class="total">{{ total_no_following }}</span>
+    following
+</span>
+
+<span id="follow_unfollow_form">
+    {% if request.user.username == user.username%}
+    {% else%}
+    <form action="{% url 'user-follow' %}" class="d-inline ml-2">
+        {% csrf_token %}
+        <button type="submit" id="follow" name="user_id" value="{{ user.id }}" {% if request.user not in all_followers %}class="btn btn-success"{% else %}class="btn btn-danger"{% endif %}>
+            {% if request.user not in all_followers %}
+                Follow
+            {% else %}
+                Unfollow
+            {% endif %}
+            {% endif %}
+        </button>
+    </form>
+</span>

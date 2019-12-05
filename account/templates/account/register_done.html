@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block html_title %}
+REGISTRATION SUCCESSFUL
+{% endblock %}
+
+{% block content%}
+
+<header>
+    {% include 'navbar.html' %}
+</header>
+
+<section class="h-100" style="background-image: url('/static/images/bg-img.jpg')">
+    <div class="container">
+        <div class="d-flex justify-content-center pt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Sign-up Successful</h3>
+                </div>
+                <div class="card-body">
+                    <h1>Welcome {{ new_user.username }}</h1>
+                    <p>Your account has been successfully created. click <a href="{% url 'login' %}">here</a> to login</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

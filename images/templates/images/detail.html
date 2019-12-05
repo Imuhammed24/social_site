@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+<header>
+    {% include 'account/header.html' %}
+</header>
+
+
+<section>
+
+    <div class="content container">
+        <h1 id="post_title">{{ post.title }}</h1>
+        <!--        <hr />-->
+        <center class="mb-5 mt-4">
+            {% load thumbnail %}
+            {% thumbnail post.image "400" as im %}
+            <a href="{{ post.image.url }}">
+                <img src="{{ im.url }}">
+            </a>
+            {% endthumbnail %}
+        </center>
+
+        <div class="image-info">
+            <div class="mb-3">
+
+                <span class="published_date">
+                    <p class="d-inline">Published on: {{ post.created }}</p>
+                </span>
+                <span id="like-section">
+                    {% include 'like_section.html' %}
+                </span>
+            </div>
+            <p id="post_description">{{ post.description|linebreaks }}</p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+
+{% block html_title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+
+<header>
+    {% include 'account/header.html' %}
+</header>
+
+
+<section>
+
+    <div class="content container">
+        <h1>{{ user.get_full_name.title }}</h1>
+
+        <div class="profile-info">
+            {% thumbnail user.profile.photo "180x180" crop="100%" as im %}
+            <img src="{{ im.url }}" class="user-detail">
+            {% endthumbnail %}
+        </div>
+
+        <span id="follow-section">
+            {% include 'account/user/user-follow-section.html' %}
+        </span>
+
+    </div>
+
+</section>
+{% endblock %}

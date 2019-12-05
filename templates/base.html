@@ -1,0 +1,71 @@
+{% load static %}
+
+<!--<!doctype html>-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <script src="{% static 'jquery/jquery-3.3.1.slim.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap3.min.css' %}">
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'jquery/jquery.cookie.min.js' %}"></script>
+    <script src="{% static 'ajax/popper.min.js' %}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function (event) {
+            $(document).on('click', '#like', function (event) {
+                event.preventDefault();
+                var pk = $(this).attr('value')
+                $.ajax({
+                   type: 'POST',
+                    url: "{% url 'like' %}",
+                    data: {'post_id':pk, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#like-section').html(response['form'])
+                        console.log($('#like-section').html(response['form']));
+                    },
+                    error: function (rs, e) {
+                        console.log(rs.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (event) {
+            $(document).on('click', '#follow', function (event) {
+                event.preventDefault();
+                var pk = $(this).attr('value')
+                $.ajax({
+                   type: 'POST',
+                    url: "{% url 'user-follow' %}",
+                    data: {'user_id':pk, 'csrfmiddlewaretoken': '{{ csrf_token }}' },
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#follow-section').html(response['form'])
+                        console.log($('#follow-section').html(response['form']));
+                    },
+                    error: function (rs, e) {
+                        console.log(rs.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <title>{% block html_title %} {% endblock %}</title>
+</head>
+<!--  <body class="p-3 mb-2 bg-dark text-white">-->
+<!--  class="p-1 mb-2" style="background-color: #1a1a1a; color: white"-->
+<body>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

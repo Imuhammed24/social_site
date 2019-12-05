@@ -1,0 +1,330 @@
+.header_navbar li, .header_navbar a{
+    display: inline;
+    color: lightgray;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+html,body{
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.navbar_out{
+    background-color: #000048;
+}
+
+/*##############################################3*/
+/*#########################################3*/
+/*###################  LOGIN FORM */
+/*#########################################3*/
+/*##############################################3*/
+
+.container{
+/*height: 100%;*/
+align-content: center;
+}
+
+
+.login_form{
+    color: white;
+}
+
+.login_form label{
+    font-weight: normal;
+    color: whitesmoke;
+}
+
+.login_form ul li{
+    font-weight: normal;
+    color: #FFC312;
+}
+
+.login_form label{
+    display: block;
+}
+
+#id_email, #id_new_password1, #id_new_password2{
+    color: black;
+    font-size: 15px;
+}
+
+#id_new_password1, #id_new_password2{
+    width: 270px;
+    height: 30px;
+    border: none;
+    background-color: ghostwhite;
+}
+
+#id_email{
+    width: 270px;
+    height: 30px;
+    background-color: ghostwhite;
+    border: none;
+}
+
+.card-body p, .card-header p{
+    color: whitesmoke;
+}
+
+.card{
+height: fit-content;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+min-width: fit-content;
+overflow: hidden;
+clear: none;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-header h3{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: fit-content;
+margin-top: 20px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+
+/*#############################################3*/
+/*#########################################3*/
+/*###################  LOGIN FORM END */
+/*#########################################3*/
+/*##############################################3*/
+
+
+
+/*#############################################3*/
+/*#########################################3*/
+/*###################  PROFILE */
+/*#########################################3*/
+/*##############################################3*/
+
+
+#profile_header{
+    padding-bottom: 3px;
+    background-color: rgba(0, 0, 99, 0.86);
+}
+
+.selection_title{
+    margin-top: 15px;
+}
+
+.menu li{
+    display: inline;
+    list-style-type: none;
+    margin-right: 15px;
+}
+
+.menu li a{
+    color: white;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.selected{
+    font-weight: bolder;
+    padding: 15px 7px;
+    border-radius: 3px;
+    background-color: rgba(30, 144, 255, 0.33);
+}
+
+
+.logo{
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 25px;
+    padding: 20px 10px;
+    text-shadow: 0px 2px 0px 0px cadetblue;
+    color: white;
+    font-weight: bolder;
+}
+
+.menu{
+    margin-top: 50px;
+    padding: 3px;
+}
+
+
+/*#############################################3*/
+/*#########################################3*/
+/*###################  CHANGE PASSWORD */
+/*#########################################3*/
+/*##############################################3*/
+
+
+.change_pwd_form{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*#############################################3*/
+/*#########################################3*/
+/*###################  REGISTER */
+/*#########################################3*/
+/*##############################################3*/
+
+.card-body h1{
+    color: whitesmoke;
+}
+
+#id_username, #id_first_name, .signup #id_email, #id_password, #id_password2{
+    color: black;
+    width: 370px;
+    height: 37px;
+}
+
+
+
+/*#############################################3*/
+/*#########################################3*/
+/*###################  EDIT */
+/*#########################################3*/
+/*##############################################3*/
+
+#edit_form label{
+    display: block;
+    margin: 0px;
+}
+
+#edit_form #id_first_name, #edit_form #id_last_name, #edit_form #id_email, #edit_form #id_date_of_birth, #edit_form #id_photo{
+    margin-bottom: 20px;
+    color: grey;
+    width: 370px;
+    height: 37px;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+}
+
+#edit_form #id_email{
+    background-color: white;
+}
+
+#edit_form {
+    margin-top: 50px;
+}
+
+.messages{
+    margin-top: 5px;
+}
+
+.messages li{
+    list-style-type: none;
+}
+
+.messages .success{
+    padding: 20px;
+    background-color: #009f00;
+    color: white;
+}
+
+.messages .error{
+    padding: 20px;
+    background-color: darkred;
+    color: white;
+}
+
+
+/*#############################################3*/
+/*#########################################3*/
+/*###################  IMAGE CREATE */
+/*#########################################3*/
+/*##############################################3*/
+
+#id_image_create_content div{
+    display: inline;
+}
+
+
+/*#############################################3*/
+/*#########################################3*/
+/*###################  IMAGE CREATE */
+/*#########################################3*/
+/*##############################################3*/
+
+.count, .published_date{
+    border: 3px solid rgba(113, 139, 234, 0.2);
+    font-weight: bold;
+    color: #888b8e;
+    border-radius: 40px;
+    padding: 3px 10px;
+    letter-spacing: .7px;
+}
+
+
+#post_title{
+    border-bottom: 2px solid rgba(113, 139, 234, 0.2);
+    border-radius: 10px;
+    box-shadow: 0px 2px .5px rgba(203, 226, 255, 0.77);
+    padding: 8px 5px 15px 5px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: #4e555b;
+}
+
+.image-info p:nth-last-child(2){
+    color: #4e555b;
+    font-family: -apple-system, sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.image-likes{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+.one_post{
+    border: 1px solid rgba(161, 198, 210, 0.63);
+    display: inline-block;
+    padding: 10px;
+    /*overflow: hidden;*/
+    /*clear: none;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /*border-width: inherit;*/
+    margin-right: 45px;
+    border-radius: 15px;
+
+}

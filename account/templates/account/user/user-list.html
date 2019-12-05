@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+
+{% block html_title %}People{% endblock %}
+
+{% block content %}
+
+<header>
+    {% include 'account/header.html' %}
+</header>
+
+<section>
+    <div class="content container">
+        <h1>People</h1>
+        <hr>
+        <div id="people-list">
+            {% for user in users %}
+                <div class="user">
+                    <a href="{{ user.get_absolute_url }}">
+                        {% thumbnail user.profile.photo "120x120" crop="100%" as im %}
+                            <img src="{{ im.url }}" alt="User-Photo" >
+                        {% endthumbnail %}
+                    </a>
+                    <div class="info">
+                        <a href="{{ user.get_absolute_url }}" class="title">{{ user.get_full_name }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

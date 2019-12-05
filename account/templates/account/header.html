@@ -1,0 +1,14 @@
+{% load static %}
+
+<header>
+    <div id="profile_header">
+        <span class="logo">Bookmarks</span>
+        {% if request.user.is_authenticated %}
+        <ul class="menu container">
+            <li {% if display_section == 'dashboard' %}class="selected"{% endif %}><a href="{% url 'profile' %}"> my dashboard </a></li>
+            <li {% if display_section == 'images' %}class="selected"{% endif %}><a href="{% url 'images-list-view' %}"> images </a></li>
+            <li {% if display_section == 'people' %}class="selected"{% endif %}><a href="{% url 'user-list' %}"> people </a></li>
+        </ul>
+        {% endif %}
+    </div>
+</header>

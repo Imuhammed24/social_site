@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+<header>
+{% include 'account/header.html' %}
+</header>
+
+
+<section>
+    <div class="content container">
+            {% if request.user.is_authenticated %}
+                {% if display_section == 'dashboard' %}
+                    {% include 'account/dashboard.html' %}
+                {% endif %}
+            {% else %}
+                <a href="{% url 'login' %}">Log-in</a>
+            {% endif%}
+        </div>
+</section>
+
+{% endblock %}

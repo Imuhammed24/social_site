@@ -1,0 +1,23 @@
+{% load static %}
+
+
+<div class="dashboard">
+<h1 class="selection_title">DASHBOARD</h1>
+    <p>Hello <strong>{{ request.user.first_name.title }}</strong>. Welcome to your dashboard, you can
+        <a href="{% url 'edit' %}">edit your profile</a> or <a href="{% url 'password_change' %}">change your password</a></p>
+
+    {% with total_images_created=request.user.images_created.count %}
+        <p>You have bookmarked {{ total_images_created }} image{{ total_images_created|pluralize }}</p>
+    {% endwith %}
+
+    <p>If you would like to bookmark a new image, click on the following button <a href="{% url 'image-create'%}" class="btn btn-success">BOOKMARK</a> </p>
+
+    <h2>What's Happening</h2>
+    <div>
+        {% for action in actions %}
+            {% include 'actions/action/action-detail.html' %}
+        {% endfor %}
+    </div>
+
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+</div>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content%}
+
+<header>
+{% include 'account/header.html' %}
+</header>
+
+
+<section>
+    {% if messages %}
+        <ul class="messages container">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">
+                    {{ message|safe }}
+                    <a href="{% url 'edit' %}" class="close">x</a>
+                </li>
+            {% endfor%}
+        </ul>
+    {% endif %}
+
+    <div class="content container">
+            <h1>Edit your account information</h1>
+
+            <form id="edit_form" action="." method="post" enctype="multipart/form-data">
+
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+                {% csrf_token %}
+                <p><input class="btn btn-success" type="submit" value="Save Changes"></p>
+
+            </form>
+    </div>
+</section>
+
+{% endblock %}

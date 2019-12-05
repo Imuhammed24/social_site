@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+<header>
+    <div id="profile_header">
+        <span class="logo">Bookmarks</span>
+        <ul class="menu container">
+
+        </ul>
+    </div>
+</header>
+
+<section>
+<div class="content container">
+<h1 class="selection_title">LOGGED OUT</h1>
+<p>You have successfully logged out. click <a href="{% url 'login' %}">here</a> to login again</p>
+</div>
+</section>
+
+{% endblock %}
